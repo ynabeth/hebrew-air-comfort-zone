@@ -1,8 +1,12 @@
 
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
+  const openWhatsApp = () => {
+    window.open('https://wa.me/972584448769', '_blank');
+  };
+
   return (
     <footer className="bg-coolblue-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -27,13 +31,17 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-medium mb-4">פרטי התקשרות</h3>
             <ul className="space-y-3">
-              <li className="flex items-center">
+              <li className="flex items-center cursor-pointer hover:text-coolblue-300" onClick={openWhatsApp}>
                 <Phone size={18} className="ml-2" />
                 <span>058-444-8769</span>
               </li>
+              <li className="flex items-center cursor-pointer hover:text-coolblue-300" onClick={openWhatsApp}>
+                <MessageCircle size={18} className="ml-2" />
+                <span>WhatsApp</span>
+              </li>
               <li className="flex items-center">
                 <Mail size={18} className="ml-2" />
-                <span>zakor@example.com</span>
+                <a href="mailto:zakarie688@gmail.com" className="hover:text-coolblue-300">zakarie688@gmail.com</a>
               </li>
               <li className="flex items-center">
                 <MapPin size={18} className="ml-2" />

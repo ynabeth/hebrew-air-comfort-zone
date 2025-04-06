@@ -13,7 +13,7 @@ const Index = () => {
       title: "התקנת מזגן עילי",
       description: "התקנה מקצועית של מזגן עילי חדש",
       price: "₪800",
-      imageUrl: "https://images.unsplash.com/photo-1588854337115-1c67d9247e4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "/lovable-uploads/38af17fd-4bb4-416b-aed4-52ed56f79977.png", // Using your uploaded image
       features: [
         "כולל כל החומרים הנדרשים",
         "עבודה נקייה ומסודרת",
@@ -25,7 +25,7 @@ const Index = () => {
       title: "תיקון מזגנים",
       description: "אבחון ותיקון כל סוגי המזגנים",
       price: "₪350",
-      imageUrl: "https://images.unsplash.com/photo-1628519592419-bf228f58ae77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1581275169331-c0b5ce5df8e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", // Better AC repair image
       features: [
         "אבחון מדויק של התקלה",
         "תיקון מהיר במקום",
@@ -37,7 +37,7 @@ const Index = () => {
       title: "ניקוי וחיטוי מזגנים",
       description: "ניקוי יסודי להארכת חיי המזגן",
       price: "₪300",
-      imageUrl: "https://images.unsplash.com/photo-1643818657367-491080baeece?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1615766553246-9147c9e9d6cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", // Better AC cleaning image
       features: [
         "ניקוי יסודי של כל חלקי המזגן",
         "שימוש בחומרי ניקוי מקצועיים",
@@ -49,7 +49,7 @@ const Index = () => {
       title: "שירות למערכות מיזוג",
       description: "טיפול במערכות מיזוג מרכזיות",
       price: "₪1,200",
-      imageUrl: "https://images.unsplash.com/photo-1611022062486-a3a5be5eae30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1621395031646-8df952efb2c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", // Better HVAC system image
       features: [
         "טיפול במערכות מורכבות",
         "שירות לבתים ועסקים",

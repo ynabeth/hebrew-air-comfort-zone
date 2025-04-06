@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -15,6 +15,10 @@ const ContactForm = () => {
       title: "הטופס נשלח בהצלחה",
       description: "אחזור אליך בהקדם האפשרי",
     });
+  };
+
+  const openWhatsApp = () => {
+    window.open('https://wa.me/972584448769', '_blank');
   };
 
   return (
@@ -28,17 +32,23 @@ const ContactForm = () => {
             </p>
             
             <div className="space-y-4 mb-8">
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer hover:text-coolblue-600" onClick={() => { window.location.href = 'tel:+972584448769'; }}>
                 <div className="bg-coolblue-100 rounded-full p-2 ml-3">
                   <Phone className="h-5 w-5 text-coolblue-600" />
                 </div>
                 <span>058-444-8769</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer hover:text-coolblue-600" onClick={openWhatsApp}>
+                <div className="bg-coolblue-100 rounded-full p-2 ml-3">
+                  <MessageCircle className="h-5 w-5 text-coolblue-600" />
+                </div>
+                <span>WhatsApp</span>
+              </div>
+              <div className="flex items-center cursor-pointer hover:text-coolblue-600" onClick={() => { window.location.href = 'mailto:zakarie688@gmail.com'; }}>
                 <div className="bg-coolblue-100 rounded-full p-2 ml-3">
                   <Mail className="h-5 w-5 text-coolblue-600" />
                 </div>
-                <span>zakor@example.com</span>
+                <span>zakarie688@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <div className="bg-coolblue-100 rounded-full p-2 ml-3">
@@ -102,9 +112,18 @@ const ContactForm = () => {
                 </label>
                 <Textarea id="message" placeholder="פרטים נוספים על השירות המבוקש" rows={4} />
               </div>
-              <Button type="submit" className="w-full bg-coolblue-600 hover:bg-coolblue-700">
-                שליחה
-              </Button>
+              <div className="flex gap-4">
+                <Button type="submit" className="flex-1 bg-coolblue-600 hover:bg-coolblue-700">
+                  שליחה
+                </Button>
+                <Button 
+                  type="button" 
+                  className="flex-1 bg-green-600 hover:bg-green-700"
+                  onClick={openWhatsApp}>
+                  <MessageCircle className="ml-2" size={16} />
+                  WhatsApp
+                </Button>
+              </div>
             </form>
           </div>
         </div>

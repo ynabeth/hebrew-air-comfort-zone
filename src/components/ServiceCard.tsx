@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Phone } from 'lucide-react';
+import { Phone, MessageCircle } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
@@ -13,6 +13,10 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ title, description, price, imageUrl, features }: ServiceCardProps) => {
+  const openWhatsApp = () => {
+    window.open('https://wa.me/972584448769', '_blank');
+  };
+  
   return (
     <Card className="overflow-hidden transition-all hover:shadow-lg">
       <div className="aspect-video overflow-hidden">
@@ -40,8 +44,12 @@ const ServiceCard = ({ title, description, price, imageUrl, features }: ServiceC
           ))}
         </ul>
       </CardContent>
-      <CardFooter>
-        <Button className="w-full bg-coolblue-600 hover:bg-coolblue-700">
+      <CardFooter className="flex gap-2">
+        <Button className="flex-1 bg-coolblue-600 hover:bg-coolblue-700" onClick={openWhatsApp}>
+          <MessageCircle className="ml-2" size={16} />
+          <span>WhatsApp</span>
+        </Button>
+        <Button className="flex-1" variant="outline">
           <Phone className="ml-2" size={16} />
           <span>058-444-8769</span>
         </Button>

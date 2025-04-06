@@ -1,10 +1,14 @@
 
 import React, { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const openWhatsApp = () => {
+    window.open('https://wa.me/972584448769', '_blank');
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
@@ -17,9 +21,9 @@ const Header = () => {
           <a href="#services" className="text-foreground hover:text-coolblue-600 font-medium">שירותים</a>
           <a href="#features" className="text-foreground hover:text-coolblue-600 font-medium">יתרונות</a>
           <a href="#contact" className="text-foreground hover:text-coolblue-600 font-medium">צור קשר</a>
-          <Button className="bg-coolblue-600 hover:bg-coolblue-700">
-            <Phone className="ml-2" size={16} />
-            058-444-8769
+          <Button className="bg-coolblue-600 hover:bg-coolblue-700" onClick={openWhatsApp}>
+            <MessageCircle className="ml-2" size={16} />
+            WhatsApp
           </Button>
         </nav>
 
@@ -64,9 +68,9 @@ const Header = () => {
             >
               צור קשר
             </a>
-            <Button className="bg-coolblue-600 hover:bg-coolblue-700 w-full">
-              <Phone className="ml-2" size={16} />
-              058-444-8769
+            <Button className="bg-coolblue-600 hover:bg-coolblue-700 w-full" onClick={openWhatsApp}>
+              <MessageCircle className="ml-2" size={16} />
+              WhatsApp
             </Button>
           </nav>
         </div>
