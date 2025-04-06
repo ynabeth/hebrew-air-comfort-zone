@@ -14,7 +14,7 @@ const Index = () => {
       title: "התקנת מזגן עילי",
       description: "התקנה מקצועית של מזגן עילי חדש כולל אחריות",
       price: "₪800",
-      imageUrl: "/lovable-uploads/f198de5a-2ce6-4a7a-bc24-5ea9a43ac3fe.png",
+      imageUrl: "https://images.unsplash.com/photo-1621395031646-8df952efb2c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       features: [
         "כולל כל החומרים הנדרשים",
         "עבודה נקייה ומסודרת",
@@ -50,7 +50,7 @@ const Index = () => {
       title: "שירות למערכות מיזוג",
       description: "טיפול במערכות מיזוג מרכזיות לבתים ועסקים",
       price: "₪1,200",
-      imageUrl: "https://images.unsplash.com/photo-1621395031646-8df952efb2c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       features: [
         "טיפול במערכות מורכבות",
         "שירות לבתים ועסקים",
