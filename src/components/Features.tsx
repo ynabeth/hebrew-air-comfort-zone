@@ -1,28 +1,28 @@
 
 import React from 'react';
-import { ThermometerSnowflake, ThermometerSun, AirVent, Shield } from 'lucide-react';
+import { ThermometerSnowflake, ThermometerSun, AirVent, Shield, Droplets } from 'lucide-react';
 
 const Features = () => {
   const featuresList = [
     {
       icon: <ThermometerSnowflake className="h-10 w-10 text-coolblue-600" />,
-      title: 'קירור מהיר ויעיל',
-      description: 'טכנולוגיה מתקדמת לקירור מהיר של החלל בזמן קצר וחיסכון באנרגיה'
+      title: 'התקנת מזגנים מקצועית',
+      description: 'התקנה מקצועית לכל סוגי המזגנים, עם דגש על עבודה נקייה ומסודרת'
     },
     {
       icon: <ThermometerSun className="h-10 w-10 text-coolblue-600" />,
-      title: 'חימום אפקטיבי',
-      description: 'פיזור חום אחיד בכל החדר לתחושת נוחות מקסימלית בימי החורף'
+      title: 'תיקון והחלפת חלקים',
+      description: 'אבחון מדויק של תקלות ותיקון מהיר ומקצועי במקום'
     },
     {
-      icon: <AirVent className="h-10 w-10 text-coolblue-600" />,
-      title: 'סינון אוויר מתקדם',
-      description: 'מסנני אוויר איכותיים ללכידת אבק, אלרגנים וחיידקים לאוויר נקי ובריא'
+      icon: <Droplets className="h-10 w-10 text-coolblue-600" />,
+      title: 'שטיפה וניקוי מזגנים',
+      description: 'ניקוי יסודי של המזגן לשיפור היעילות והארכת חיי המוצר'
     },
     {
       icon: <Shield className="h-10 w-10 text-coolblue-600" />,
       title: 'אחריות ושירות',
-      description: '5 שנות אחריות ושירות תיקונים מהיר עם טכנאים מוסמכים'
+      description: 'אחריות על כל עבודה ושירות מהיר בכל אזור המרכז והצפון'
     }
   ];
 
@@ -30,9 +30,9 @@ const Features = () => {
     <section id="features" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-coolblue-900">למה לבחור במזגני אייר-קומפורט?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-coolblue-900">למה לבחור ב-ZakOr?</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            אנחנו מציעים את הטכנולוגיה המתקדמת ביותר בתחום מיזוג האוויר, עם דגש על איכות, חיסכון באנרגיה ושירות מצוין
+            אני, זכרי אלי ברדה, מתמחה בהתקנת מזגנים, תיקון ושטיפת מזגנים, עם דגש על שירות מקצועי ואמין
           </p>
         </div>
 
@@ -49,10 +49,10 @@ const Features = () => {
         </div>
 
         <div className="mt-16 bg-coolblue-600 rounded-lg p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">צריכים עזרה בבחירת המזגן המתאים?</h3>
-          <p className="text-lg mb-6">הצוות המקצועי שלנו ישמח להמליץ על המזגן המתאים לחלל שלכם</p>
+          <h3 className="text-2xl font-bold mb-4">צריכים עזרה עם המזגן שלכם?</h3>
+          <p className="text-lg mb-6">אני כאן כדי לעזור בכל שירותי המיזוג שאתם צריכים</p>
           <button className="bg-white text-coolblue-600 hover:bg-gray-100 font-medium py-2 px-6 rounded-full">
-            לתיאום פגישת ייעוץ
+            צרו קשר: 058-444-8769
           </button>
         </div>
       </div>

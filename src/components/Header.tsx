@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -9,15 +9,18 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="text-2xl font-bold text-coolblue-700">אייר-קומפורט</div>
+        <div className="text-2xl font-bold text-coolblue-700">ZakOr</div>
         
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-6 space-x-reverse">
           <a href="#" className="text-foreground hover:text-coolblue-600 font-medium">בית</a>
-          <a href="#products" className="text-foreground hover:text-coolblue-600 font-medium">מוצרים</a>
+          <a href="#services" className="text-foreground hover:text-coolblue-600 font-medium">שירותים</a>
           <a href="#features" className="text-foreground hover:text-coolblue-600 font-medium">יתרונות</a>
           <a href="#contact" className="text-foreground hover:text-coolblue-600 font-medium">צור קשר</a>
-          <Button className="bg-coolblue-600 hover:bg-coolblue-700">התקשר עכשיו</Button>
+          <Button className="bg-coolblue-600 hover:bg-coolblue-700">
+            <Phone className="ml-2" size={16} />
+            058-444-8769
+          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -41,11 +44,11 @@ const Header = () => {
               בית
             </a>
             <a 
-              href="#products" 
+              href="#services" 
               className="text-foreground hover:text-coolblue-600 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              מוצרים
+              שירותים
             </a>
             <a 
               href="#features" 
@@ -62,7 +65,8 @@ const Header = () => {
               צור קשר
             </a>
             <Button className="bg-coolblue-600 hover:bg-coolblue-700 w-full">
-              התקשר עכשיו
+              <Phone className="ml-2" size={16} />
+              058-444-8769
             </Button>
           </nav>
         </div>
