@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -31,7 +30,7 @@ const Index = () => {
       title: t('repair'),
       description: t('repairDesc'),
       price: "₪350",
-      imageUrl: "https://images.unsplash.com/photo-1586455122341-ba6bb0970677?q=80&w=1000",
+      imageUrl: "https://images.unsplash.com/photo-1456428199391-a3b1cb5e93ab?q=80&w=1000",
       features: [
         language === 'he' ? "אבחון מדויק של התקלה" : "Diagnostic précis du problème",
         language === 'he' ? "תיקון מהיר במקום" : "Réparation rapide sur place",
@@ -43,7 +42,7 @@ const Index = () => {
       title: t('cleaning'),
       description: t('cleaningDesc'),
       price: "₪300",
-      imageUrl: "https://images.unsplash.com/photo-1590755958171-90168ab2b975?q=80&w=1000",
+      imageUrl: "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?q=80&w=1000",
       features: [
         language === 'he' ? "ניקוי יסודי של כל חלקי המזגן" : "Nettoyage en profondeur de toutes les parties du climatiseur", 
         language === 'he' ? "שימוש בחומרי ניקוי מקצועיים" : "Utilisation de produits de nettoyage professionnels",
@@ -55,7 +54,7 @@ const Index = () => {
       title: t('systems'),
       description: t('systemsDesc'),
       price: "₪1,200",
-      imageUrl: "https://images.unsplash.com/photo-1651145178248-1e7209528131?q=80&w=1000",
+      imageUrl: "https://images.unsplash.com/photo-1552839084-61da456f4d77?q=80&w=1000",
       features: [
         language === 'he' ? "טיפול במערכות מורכבות" : "Traitement de systèmes complexes",
         language === 'he' ? "שירות לבתים ועסקים" : "Service pour maisons et entreprises",

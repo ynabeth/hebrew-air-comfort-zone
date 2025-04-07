@@ -51,8 +51,6 @@ const ContactForm = () => {
         message: ''
       });
       
-      // Note: In a real implementation, you would send this data to a server endpoint
-      // that would handle the email sending process server-side
       console.log("Email would be sent to: zakarie688@gmail.com");
       console.log("Form data:", formData);
       
@@ -68,6 +66,18 @@ const ContactForm = () => {
   const openWhatsApp = () => {
     window.open('https://wa.me/972584448769', '_blank');
   };
+
+  // Helper function to get nested translations
+  const getServiceOption = (option: string): string => {
+    const serviceOptions = translations[language].serviceOptions;
+    if (typeof serviceOptions === 'object' && serviceOptions !== null) {
+      return (serviceOptions as Record<string, string>)[option] || option;
+    }
+    return option;
+  };
+
+  // Import translations directly to access nested objects
+  const { translations } = useLanguage();
 
   return (
     <section id="contact" className="py-16 bg-gradient-to-b from-white to-coolblue-50">
@@ -215,11 +225,12 @@ const ContactForm = () => {
                   value={formData.service}
                   onChange={handleChange}
                 >
-                  <option value="installation">{t('serviceOptions.installation')}</option>
-                  <option value="repair">{t('serviceOptions.repair')}</option>
-                  <option value="cleaning">{t('serviceOptions.cleaning')}</option>
-                  <option value="consulting">{t('serviceOptions.consulting')}</option>
-                  <option value="other">{t('serviceOptions.other')}</option>
+                  {/* Get translated options from the nested translations */}
+                  <option value="installation">{getServiceOption('installation')}</option>
+                  <option value="repair">{getServiceOption('repair')}</option>
+                  <option value="cleaning">{getServiceOption('cleaning')}</option>
+                  <option value="consulting">{getServiceOption('consulting')}</option>
+                  <option value="other">{getServiceOption('other')}</option>
                 </select>
               </div>
               <div className="mb-6">
