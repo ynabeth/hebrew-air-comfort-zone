@@ -3,9 +3,12 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 
 type Language = 'he' | 'fr';
 
+// Updated type definition to support nested objects
 type TranslationsType = {
   [key in Language]: {
-    [key: string]: string;
+    [key: string]: string | {
+      [key: string]: string;
+    };
   }
 };
 
@@ -165,8 +168,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     document.documentElement.lang = language;
   }, [language]);
 
-  const t = (key: string) => {
-    return translations[language][key] || key;
+  // Updated t function to handle nested objects
+  const t = (key: string): string => {
+    const value = translations[language][key];
+    
+    // Check if the value is a string or an object
+    if (typeof value === 'string') {
+      return value;
+    }
+    
+    // If it's not a string and not undefined, return the key as fallback
+    return key;
   };
 
   return (
