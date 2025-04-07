@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -18,7 +19,7 @@ const Index = () => {
       title: t('installation'),
       description: t('installationDesc'),
       price: "₪800",
-      imageUrl: "https://images.unsplash.com/photo-1621395235622-e3cac874f2d7?q=80&w=1000",
+      imageUrl: "https://images.unsplash.com/photo-1624557059802-228e2282d0c6?q=80&w=2070&auto=format&fit=crop",
       features: [
         language === 'he' ? "כולל כל החומרים הנדרשים" : "Inclut tous les matériaux nécessaires",
         language === 'he' ? "עבודה נקייה ומסודרת" : "Travail propre et soigné",
@@ -30,7 +31,7 @@ const Index = () => {
       title: t('repair'),
       description: t('repairDesc'),
       price: "₪350",
-      imageUrl: "https://images.unsplash.com/photo-1456428199391-a3b1cb5e93ab?q=80&w=1000",
+      imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop",
       features: [
         language === 'he' ? "אבחון מדויק של התקלה" : "Diagnostic précis du problème",
         language === 'he' ? "תיקון מהיר במקום" : "Réparation rapide sur place",
@@ -42,7 +43,7 @@ const Index = () => {
       title: t('cleaning'),
       description: t('cleaningDesc'),
       price: "₪300",
-      imageUrl: "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?q=80&w=1000",
+      imageUrl: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=2069&auto=format&fit=crop",
       features: [
         language === 'he' ? "ניקוי יסודי של כל חלקי המזגן" : "Nettoyage en profondeur de toutes les parties du climatiseur", 
         language === 'he' ? "שימוש בחומרי ניקוי מקצועיים" : "Utilisation de produits de nettoyage professionnels",
@@ -54,7 +55,7 @@ const Index = () => {
       title: t('systems'),
       description: t('systemsDesc'),
       price: "₪1,200",
-      imageUrl: "https://images.unsplash.com/photo-1552839084-61da456f4d77?q=80&w=1000",
+      imageUrl: "https://images.unsplash.com/photo-1635048666670-4ce5151a5d3c?q=80&w=2070&auto=format&fit=crop",
       features: [
         language === 'he' ? "טיפול במערכות מורכבות" : "Traitement de systèmes complexes",
         language === 'he' ? "שירות לבתים ועסקים" : "Service pour maisons et entreprises",
@@ -157,3 +158,4 @@ const Index = () => {
 };
 
 export default Index;
+

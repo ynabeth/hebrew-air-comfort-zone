@@ -80,6 +80,11 @@ const ServiceCard = ({ title, description, price, imageUrl, features }: ServiceC
           src={imageUrl} 
           alt={title} 
           className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-700"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null; 
+            target.src = 'https://images.unsplash.com/photo-1635048666670-4ce5151a5d3c?q=80&w=2070&auto=format&fit=crop';
+          }}
         />
       </div>
       
