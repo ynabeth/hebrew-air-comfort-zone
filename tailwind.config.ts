@@ -120,6 +120,14 @@ export default {
 			},
 			fontFamily: {
 				heebo: ['Heebo', 'sans-serif'],
+			},
+			transitionProperty: {
+				'height': 'height',
+				'spacing': 'margin, padding',
+			},
+			animationDelay: {
+				'1000': '1000ms',
+				'2000': '2000ms',
 			}
 		}
 	},

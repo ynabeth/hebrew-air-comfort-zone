@@ -52,6 +52,31 @@ export const translations: TranslationsType = {
     needHelp: "צריכים עזרה עם המזגן שלכם?",
     hereToHelp: "אני כאן כדי לעזור בכל שירותי המיזוג שאתם צריכים",
     contactUs: "צרו קשר:",
+    // Contact form
+    firstName: "שם פרטי",
+    lastName: "שם משפחה",
+    emailField: "דוא״ל",
+    phone: "טלפון",
+    serviceType: "סוג שירות",
+    message: "הודעה",
+    send: "שליחה",
+    sending: "שולח...",
+    contactTitle: "צור קשר",
+    contactDesc: "זקוקים להתקנה, תיקון או ניקוי מזגן? השאירו פרטים ואחזור אליכם בהקדם",
+    formSuccess: "הטופס נשלח בהצלחה",
+    formSuccessDesc: "אחזור אליך בהקדם האפשרי",
+    formError: "שגיאה בשליחת הטופס",
+    formErrorDesc: "אנא נסה שוב מאוחר יותר או צור קשר בטלפון",
+    serviceOptions: {
+      installation: "התקנת מזגן",
+      repair: "תיקון מזגן",
+      cleaning: "ניקוי וחיטוי מזגן",
+      consulting: "ייעוץ",
+      other: "אחר"
+    },
+    availability: "זמין בכל ימות השבוע",
+    serviceArea: "שירות באזור המרכז והצפון",
+    details: "פרטים נוספים על השירות המבוקש"
   },
   fr: {
     // Header
@@ -95,6 +120,31 @@ export const translations: TranslationsType = {
     needHelp: "Besoin d'aide avec votre climatiseur?",
     hereToHelp: "Je suis là pour vous aider avec tous les services de climatisation dont vous avez besoin",
     contactUs: "Contactez-nous:",
+    // Contact form
+    firstName: "Prénom",
+    lastName: "Nom",
+    emailField: "Email",
+    phone: "Téléphone",
+    serviceType: "Type de service",
+    message: "Message",
+    send: "Envoyer",
+    sending: "Envoi en cours...",
+    contactTitle: "Contactez-nous",
+    contactDesc: "Besoin d'installation, de réparation ou de nettoyage de climatiseur? Laissez vos coordonnées et je vous recontacterai rapidement",
+    formSuccess: "Formulaire envoyé avec succès",
+    formSuccessDesc: "Je vous recontacterai dès que possible",
+    formError: "Erreur lors de l'envoi du formulaire",
+    formErrorDesc: "Veuillez réessayer plus tard ou contactez-nous par téléphone",
+    serviceOptions: {
+      installation: "Installation de climatiseur",
+      repair: "Réparation de climatiseur",
+      cleaning: "Nettoyage et désinfection",
+      consulting: "Consultation",
+      other: "Autre"
+    },
+    availability: "Disponible tous les jours de la semaine",
+    serviceArea: "Service dans les régions du centre et du nord",
+    details: "Détails supplémentaires sur le service demandé"
   }
 };
 
