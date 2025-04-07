@@ -14,7 +14,7 @@ const Index = () => {
       title: "התקנת מזגן עילי",
       description: "התקנה מקצועית של מזגן עילי חדש כולל אחריות",
       price: "₪800",
-      imageUrl: "https://images.unsplash.com/photo-1621395031646-8df952efb2c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "/lovable-uploads/f198de5a-2ce6-4a7a-bc24-5ea9a43ac3fe.png",
       features: [
         "כולל כל החומרים הנדרשים",
         "עבודה נקייה ומסודרת",
@@ -26,7 +26,7 @@ const Index = () => {
       title: "תיקון מזגנים",
       description: "אבחון ותיקון כל סוגי המזגנים במהירות ובמקצועיות",
       price: "₪350",
-      imageUrl: "https://images.unsplash.com/photo-1581275170331-c0b5ce5df8e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "https://images.pexels.com/photos/3631711/pexels-photo-3631711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
       features: [
         "אבחון מדויק של התקלה",
         "תיקון מהיר במקום",
@@ -38,7 +38,7 @@ const Index = () => {
       title: "ניקוי וחיטוי מזגנים",
       description: "ניקוי יסודי להארכת חיי המזגן ושיפור איכות האוויר",
       price: "₪300",
-      imageUrl: "https://images.unsplash.com/photo-1615766553246-9147c9e9d6cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "https://images.pexels.com/photos/4108231/pexels-photo-4108231.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
       features: [
         "ניקוי יסודי של כל חלקי המזגן",
         "שימוש בחומרי ניקוי מקצועיים",
@@ -50,7 +50,7 @@ const Index = () => {
       title: "שירות למערכות מיזוג",
       description: "טיפול במערכות מיזוג מרכזיות לבתים ועסקים",
       price: "₪1,200",
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      imageUrl: "https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
       features: [
         "טיפול במערכות מורכבות",
         "שירות לבתים ועסקים",

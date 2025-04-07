@@ -1,20 +1,66 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/components/ui/use-toast';
+import { toast } from 'sonner';
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 const ContactForm = () => {
-  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    service: 'installation',
+    message: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "הטופס נשלח בהצלחה",
-      description: "אחזור אליך בהקדם האפשרי",
-    });
+    setIsSubmitting(true);
+    
+    try {
+      // Create email content
+      const subject = `פנייה חדשה: ${formData.service} - מ${formData.firstName} ${formData.lastName}`;
+      const body = `
+שם: ${formData.firstName} ${formData.lastName}
+טלפון: ${formData.phone}
+אימייל: ${formData.email}
+סוג שירות: ${formData.service}
+הודעה: ${formData.message}
+      `;
+      
+      // Open default mail client with pre-filled information
+      window.open(`mailto:zakarie688@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+      
+      // Show success message
+      toast.success("הטופס נשלח בהצלחה", {
+        description: "אחזור אליך בהקדם האפשרי",
+      });
+      
+      // Clear form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        service: 'installation',
+        message: ''
+      });
+    } catch (error) {
+      toast.error("שגיאה בשליחת הטופס", {
+        description: "אנא נסה שוב מאוחר יותר או צור קשר בטלפון",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const openWhatsApp = () => {
@@ -73,32 +119,62 @@ const ContactForm = () => {
                   <label className="block text-sm font-medium mb-1 text-gray-700" htmlFor="firstName">
                     שם פרטי
                   </label>
-                  <Input id="firstName" placeholder="הכנס שם פרטי" />
+                  <Input 
+                    id="firstName" 
+                    placeholder="הכנס שם פרטי" 
+                    value={formData.firstName} 
+                    onChange={handleChange} 
+                    required 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1 text-gray-700" htmlFor="lastName">
                     שם משפחה
                   </label>
-                  <Input id="lastName" placeholder="הכנס שם משפחה" />
+                  <Input 
+                    id="lastName" 
+                    placeholder="הכנס שם משפחה" 
+                    value={formData.lastName} 
+                    onChange={handleChange} 
+                    required 
+                  />
                 </div>
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-1 text-gray-700" htmlFor="email">
                   דוא״ל
                 </label>
-                <Input id="email" type="email" placeholder="your@email.com" />
+                <Input 
+                  id="email" 
+                  type="email" 
+                  placeholder="your@email.com" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                  required 
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-1 text-gray-700" htmlFor="phone">
                   טלפון
                 </label>
-                <Input id="phone" placeholder="050-1234567" />
+                <Input 
+                  id="phone" 
+                  placeholder="050-1234567" 
+                  value={formData.phone} 
+                  onChange={handleChange} 
+                  required 
+                />
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-1 text-gray-700" htmlFor="service">
                   סוג שירות
                 </label>
-                <select id="service" className="w-full rounded-md border border-input bg-background px-3 py-2">
+                <select 
+                  id="service" 
+                  className="w-full rounded-md border border-input bg-background px-3 py-2"
+                  value={formData.service}
+                  onChange={handleChange}
+                >
                   <option value="installation">התקנת מזגן</option>
                   <option value="repair">תיקון מזגן</option>
                   <option value="cleaning">ניקוי וחיטוי מזגן</option>
@@ -110,11 +186,22 @@ const ContactForm = () => {
                 <label className="block text-sm font-medium mb-1 text-gray-700" htmlFor="message">
                   הודעה
                 </label>
-                <Textarea id="message" placeholder="פרטים נוספים על השירות המבוקש" rows={4} />
+                <Textarea 
+                  id="message" 
+                  placeholder="פרטים נוספים על השירות המבוקש" 
+                  rows={4} 
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div className="flex gap-4">
-                <Button type="submit" className="flex-1 bg-coolblue-600 hover:bg-coolblue-700">
-                  שליחה
+                <Button 
+                  type="submit" 
+                  className="flex-1 bg-coolblue-600 hover:bg-coolblue-700"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'שולח...' : 'שליחה'}
                 </Button>
                 <Button 
                   type="button" 
