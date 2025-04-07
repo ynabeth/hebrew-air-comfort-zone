@@ -97,11 +97,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '0.5' },
+					'50%': { opacity: '0.2' }
+				},
+				'cold-wave': {
+					'0%': { opacity: '0.3', transform: 'scale(1)' },
+					'100%': { opacity: '0', transform: 'scale(1.5)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
+				'cold-wave': 'cold-wave 2s ease-out infinite'
 			},
 			fontFamily: {
 				heebo: ['Heebo', 'sans-serif'],
