@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '../contexts/LanguageContext';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Loader2, CreditCard, Paypal } from 'lucide-react';
+import { Loader2, CreditCard, BadgeDollarSign } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface PaymentModalProps {
@@ -51,12 +50,8 @@ const PaymentModal = ({ isOpen, onClose, title, price, onPaymentSuccess }: Payme
     setIsProcessing(true);
 
     try {
-      // Here we would normally integrate with a payment processor like Stripe
-      // For now, we'll simulate a successful payment after a delay
-      
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // Simulate sending emails
       console.log('Sending receipt to customer:', formData.email);
       console.log('Sending order notification to owner');
       
@@ -142,8 +137,8 @@ const PaymentModal = ({ isOpen, onClose, title, price, onPaymentSuccess }: Payme
                 className={`flex-1 ${paymentMethod === 'paypal' ? 'bg-blue-600' : ''}`}
                 onClick={() => handlePaymentMethodSelect('paypal')}
               >
-                <Paypal className={`${isRTL ? 'ml-2' : 'mr-2'}`} size={18} />
-                PayPal
+                <BadgeDollarSign className={`${isRTL ? 'ml-2' : 'mr-2'}`} size={18} />
+                {language === 'he' ? 'אמצעי תשלום אחר' : 'Autre méthode de paiement'}
               </Button>
             </div>
           </div>
