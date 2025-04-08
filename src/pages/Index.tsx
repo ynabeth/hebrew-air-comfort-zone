@@ -19,7 +19,7 @@ const Index = () => {
       title: t('installation'),
       description: t('installationDesc'),
       price: "₪800",
-      imageUrl: "https://images.unsplash.com/photo-1624557059802-228e2282d0c6?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/4585d3ee-2d54-4855-a08e-89d05ca85650.png",
       features: [
         language === 'he' ? "כולל כל החומרים הנדרשים" : "Inclut tous les matériaux nécessaires",
         language === 'he' ? "עבודה נקייה ומסודרת" : "Travail propre et soigné",
@@ -31,7 +31,7 @@ const Index = () => {
       title: t('repair'),
       description: t('repairDesc'),
       price: "₪350",
-      imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/ef08a598-5893-46ee-88c8-3d38b499338e.png",
       features: [
         language === 'he' ? "אבחון מדויק של התקלה" : "Diagnostic précis du problème",
         language === 'he' ? "תיקון מהיר במקום" : "Réparation rapide sur place",
@@ -43,7 +43,7 @@ const Index = () => {
       title: t('cleaning'),
       description: t('cleaningDesc'),
       price: "₪300",
-      imageUrl: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=2069&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/987136ea-8c00-49d5-9f24-3f9d851b8ee6.png",
       features: [
         language === 'he' ? "ניקוי יסודי של כל חלקי המזגן" : "Nettoyage en profondeur de toutes les parties du climatiseur", 
         language === 'he' ? "שימוש בחומרי ניקוי מקצועיים" : "Utilisation de produits de nettoyage professionnels",
@@ -55,7 +55,7 @@ const Index = () => {
       title: t('systems'),
       description: t('systemsDesc'),
       price: "₪1,200",
-      imageUrl: "https://images.unsplash.com/photo-1635048666670-4ce5151a5d3c?q=80&w=2070&auto=format&fit=crop",
+      imageUrl: "/lovable-uploads/4037e3a3-f76d-4d6c-a77f-5046f91c408a.png",
       features: [
         language === 'he' ? "טיפול במערכות מורכבות" : "Traitement de systèmes complexes",
         language === 'he' ? "שירות לבתים ועסקים" : "Service pour maisons et entreprises",
@@ -158,4 +158,3 @@ const Index = () => {
 };
 
 export default Index;
-

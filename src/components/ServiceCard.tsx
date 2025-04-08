@@ -43,21 +43,21 @@ const ServiceCard = ({ title, description, price, imageUrl, features }: ServiceC
   
   return (
     <Card className="overflow-hidden transition-all hover:shadow-xl border-coolblue-100 h-full flex flex-col relative group hover:translate-y-[-5px] duration-300">
-      <div className="absolute top-0 inset-x-0 h-3 bg-gradient-to-r from-coolblue-400 to-coolblue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-coolblue-400 via-coolblue-600 to-coolblue-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
       
-      {/* Decorative cooling icon */}
+      {/* Decorative cooling icon with glowing effect */}
       <div className="absolute top-4 right-4 z-10">
-        <div className="bg-white/80 backdrop-blur-sm p-1.5 rounded-full shadow-lg">
-          <Snowflake size={20} className="text-coolblue-600" />
+        <div className="bg-white/80 backdrop-blur-sm p-1.5 rounded-full shadow-lg group-hover:shadow-coolblue-300/50">
+          <Snowflake size={20} className="text-coolblue-600 group-hover:text-coolblue-500 transition-colors" />
         </div>
       </div>
       
-      {/* Image section with overlay */}
+      {/* Image section with enhanced overlay */}
       <div className="aspect-video overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 flex items-end">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10 flex items-end">
           <div className={`p-4 w-full ${isRTL ? 'text-right' : 'text-left'}`}>
             <div className="flex items-center justify-between">
-              <div className="bg-coolblue-600/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-lg">
+              <div className="bg-coolblue-600/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-lg group-hover:bg-coolblue-500/90 transition-colors">
                 <div className="flex items-center">
                   <ThermometerSnowflake size={16} className={`text-white ${isRTL ? 'ml-1' : 'mr-1'}`} />
                   <span className="text-sm font-semibold text-white">Pro AC</span>
@@ -71,10 +71,10 @@ const ServiceCard = ({ title, description, price, imageUrl, features }: ServiceC
           </div>
         </div>
         
-        {/* Image with overlay pattern */}
+        {/* Improved overlay pattern */}
         <div className="absolute inset-0 bg-coolblue-900/5 bg-opacity-10 z-0 
                       bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_0.5px,_transparent_1px)] 
-                      bg-[length:12px_12px]"></div>
+                      bg-[length:12px_12px] group-hover:bg-[length:14px_14px] transition-all duration-500"></div>
         
         <img 
           src={imageUrl} 
@@ -88,44 +88,50 @@ const ServiceCard = ({ title, description, price, imageUrl, features }: ServiceC
         />
       </div>
       
-      {/* Card content */}
+      {/* Card content with improved styling */}
       <CardHeader className="pb-2">
         <CardTitle className="text-coolblue-800 flex items-center">
-          <span>{title}</span>
+          <span className="relative group-hover:text-coolblue-600 transition-colors">
+            {title}
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-coolblue-500 group-hover:w-full transition-all duration-300"></span>
+          </span>
         </CardTitle>
-        <CardDescription className="text-gray-600">{description}</CardDescription>
+        <CardDescription className="text-gray-600 group-hover:text-gray-800 transition-colors">{description}</CardDescription>
       </CardHeader>
       
       <CardContent className="flex-grow pt-0">
         <ul className={`space-y-2 ${isRTL ? 'rtl' : 'ltr'}`}>
           {features.map((feature, index) => (
             <li key={index} className={`flex items-center text-sm text-gray-700 group-hover:text-gray-900 transition-colors`}>
-              <span className={`text-coolblue-600 ${isRTL ? 'ml-2' : 'mr-2'} flex-shrink-0`}>✓</span>
+              <span className={`text-coolblue-600 group-hover:text-coolblue-500 transition-colors ${isRTL ? 'ml-2' : 'mr-2'} flex-shrink-0`}>✓</span>
               <span>{feature}</span>
             </li>
           ))}
         </ul>
       </CardContent>
       
-      {/* Card actions */}
-      <CardFooter className="flex flex-col gap-2 bg-gradient-to-b from-coolblue-50 to-gray-50 p-4 border-t border-coolblue-100/50">
-        <Button className="w-full bg-coolblue-600 hover:bg-coolblue-700 shadow-md hover:shadow-lg transition-all" onClick={openWhatsApp}>
-          <MessageCircle className={isRTL ? "ml-2" : "mr-2"} size={16} />
+      {/* Card actions with improved visual effects */}
+      <CardFooter className="flex flex-col gap-2 bg-gradient-to-b from-coolblue-50/50 to-white p-4 border-t border-coolblue-100/30">
+        <Button 
+          className="w-full bg-coolblue-600 hover:bg-coolblue-500 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2" 
+          onClick={openWhatsApp}
+        >
+          <MessageCircle className={isRTL ? "ml-1 animate-pulse" : "mr-1 animate-pulse"} size={16} />
           <span>{t('sendWhatsapp')}</span>
         </Button>
         
         <div className="flex gap-2 w-full">
           <Button variant="outline" 
-            className="flex-1 border-coolblue-200 hover:border-coolblue-400 hover:bg-coolblue-50 transition-colors" 
+            className="flex-1 border-coolblue-200 hover:border-coolblue-400 hover:bg-coolblue-50 transition-colors flex items-center justify-center gap-1" 
             onClick={callPhone}>
-            <Phone className={isRTL ? "ml-2" : "mr-2"} size={16} />
+            <Phone className={isRTL ? "ml-1" : "mr-1"} size={16} />
             <span>{t('phoneNumber')}</span>
           </Button>
           
           <Button variant="ghost" 
-            className="flex-1 text-coolblue-700 hover:bg-coolblue-50 transition-colors" 
+            className="flex-1 text-coolblue-700 hover:bg-coolblue-50 transition-colors flex items-center justify-center gap-1" 
             onClick={sendEmail}>
-            <Mail className={isRTL ? "ml-2" : "mr-2"} size={16} />
+            <Mail className={isRTL ? "ml-1" : "mr-1"} size={16} />
             <span>{t('email')}</span>
           </Button>
         </div>
