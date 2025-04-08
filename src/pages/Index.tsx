@@ -164,25 +164,23 @@ const Index = () => {
             
             <div className={`text-center mb-16 ${isRTL ? 'rtl' : 'ltr'}`}>
               <div className="inline-block bg-amber-500/10 px-4 py-1 rounded-full mb-4">
-                <h2 className="text-amber-800 font-medium">{language === 'he' ? 'שירות חדש!' : 'Nouveau Service!'}</h2>
+                <h2 className="text-amber-800 font-medium">{t('subscriptionNewService')}</h2>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-coolblue-900 flex items-center justify-center">
                 {isRTL ? (
                   <>
-                    {language === 'he' ? 'מנוי תחזוקה שנתי למזגן' : 'Abonnement d\'entretien annuel'}
+                    {t('subscriptionTitle')}
                     <CalendarCheck size={28} className="ml-2 text-amber-500" />
                   </>
                 ) : (
                   <>
                     <CalendarCheck size={28} className="mr-2 text-amber-500" />
-                    {language === 'he' ? 'מנוי תחזוקה שנתי למזגן' : 'Abonnement d\'entretien annuel'}
+                    {t('subscriptionTitle')}
                   </>
                 )}
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                {language === 'he' 
-                  ? 'שמור על המזגן שלך במצב תקין לאורך כל השנה עם תוכנית התחזוקה השנתית שלנו במחיר קבוע'
-                  : 'Gardez votre climatiseur en parfait état tout au long de l\'année avec notre programme d\'entretien annuel à prix fixe'}
+                {t('subscriptionTagline')}
               </p>
             </div>
             
