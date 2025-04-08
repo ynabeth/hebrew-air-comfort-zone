@@ -3,12 +3,13 @@ import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
+import ProductCard from '../components/ProductCard';
 import Features from '../components/Features';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import { Toaster } from '@/components/ui/sonner';
 import { useLanguage } from '../contexts/LanguageContext';
-import { AirVent, Thermometer, Snowflake, Wind } from 'lucide-react';
+import { AirVent, Thermometer, Snowflake, Wind, CalendarCheck } from 'lucide-react';
 
 const Index = () => {
   const { t, language } = useLanguage();
@@ -64,6 +65,23 @@ const Index = () => {
       ]
     }
   ];
+
+  const subscriptionProduct = {
+    title: language === 'he' ? "מנוי תחזוקה שנתי למזגן" : "Abonnement d'entretien annuel",
+    description: language === 'he' 
+      ? "שירות תחזוקה שנתי למזגן שלך, כולל בדיקה, ניקוי ווידוא תקינות" 
+      : "Service d'entretien annuel pour votre climatiseur, comprenant inspection, nettoyage et vérification",
+    price: "₪350",
+    imageUrl: "https://images.unsplash.com/photo-1621492654963-cc482b258211?q=80&w=1974&auto=format&fit=crop",
+    features: [
+      language === 'he' ? "בדיקת מזגן מלאה פעם בשנה" : "Contrôle complet du climatiseur une fois par an",
+      language === 'he' ? "ניקוי יסודי של כל חלקי המזגן" : "Nettoyage en profondeur de toutes les pièces",
+      language === 'he' ? "חיטוי ומניעת עובש וחיידקים" : "Désinfection et prévention de moisissures",
+      language === 'he' ? "אחריות לשנה על תקינות המזגן" : "Garantie d'un an sur le bon fonctionnement",
+      language === 'he' ? "תשלום בהוראת קבע (מחיר למזגן אחד)" : "Paiement par prélèvement automatique (prix par unité)"
+    ],
+    isSubscription: true
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-coolblue-50 text-gray-900 relative">
@@ -135,6 +153,42 @@ const Index = () => {
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
+          </div>
+          
+          {/* Annual Subscription Section */}
+          <div className="mt-20 pt-10 relative">
+            <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-coolblue-300/30 to-transparent"></div>
+            <div className="absolute left-1/2 -translate-x-1/2 -top-5 bg-white rounded-full p-2 border border-amber-100 shadow-lg">
+              <CalendarCheck size={24} className="text-amber-500" />
+            </div>
+            
+            <div className={`text-center mb-16 ${isRTL ? 'rtl' : 'ltr'}`}>
+              <div className="inline-block bg-amber-500/10 px-4 py-1 rounded-full mb-4">
+                <h2 className="text-amber-800 font-medium">{language === 'he' ? 'שירות חדש!' : 'Nouveau Service!'}</h2>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-coolblue-900 flex items-center justify-center">
+                {isRTL ? (
+                  <>
+                    {language === 'he' ? 'מנוי תחזוקה שנתי למזגן' : 'Abonnement d\'entretien annuel'}
+                    <CalendarCheck size={28} className="ml-2 text-amber-500" />
+                  </>
+                ) : (
+                  <>
+                    <CalendarCheck size={28} className="mr-2 text-amber-500" />
+                    {language === 'he' ? 'מנוי תחזוקה שנתי למזגן' : 'Abonnement d\'entretien annuel'}
+                  </>
+                )}
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                {language === 'he' 
+                  ? 'שמור על המזגן שלך במצב תקין לאורך כל השנה עם תוכנית התחזוקה השנתית שלנו במחיר קבוע'
+                  : 'Gardez votre climatiseur en parfait état tout au long de l\'année avec notre programme d\'entretien annuel à prix fixe'}
+              </p>
+            </div>
+            
+            <div className="max-w-lg mx-auto">
+              <ProductCard {...subscriptionProduct} />
+            </div>
           </div>
           
           {/* Air flow decorative element */}

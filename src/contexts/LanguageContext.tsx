@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 type Language = 'he' | 'fr';
@@ -41,6 +40,14 @@ export const translations: TranslationsType = {
     sendWhatsapp: "שלח הודעת WhatsApp",
     phoneNumber: "058-444-8769",
     email: "מייל",
+    // Subscription product
+    subscriptionTitle: "מנוי תחזוקה שנתי למזגן",
+    subscriptionDesc: "שירות תחזוקה שנתי למזגן שלך, כולל בדיקה, ניקוי ווידוא תקינות",
+    subscriptionNewService: "שירות חדש!",
+    subscriptionTagline: "שמור על המזגן שלך במצב תקין לאורך כל השנה עם תוכנית התחזוקה השנתית שלנו במחיר קבוע",
+    perYear: "לשנה",
+    annualSubscription: "מנוי שנתי",
+    annualMaintenance: "תחזוקה שנתית",
     // Features
     whyChoose: "למה לבחור ב-ZakOr?",
     whyDesc: "אני, זכרי אלי ברדה, מתמחה בהתקנת מזגנים, תיקון ושטיפת מזגנים, עם דגש על שירות מקצועי ואמין",
@@ -109,6 +116,14 @@ export const translations: TranslationsType = {
     sendWhatsapp: "Envoyer un Message WhatsApp",
     phoneNumber: "058-444-8769",
     email: "Email",
+    // Subscription product
+    subscriptionTitle: "Abonnement d'entretien annuel",
+    subscriptionDesc: "Service d'entretien annuel pour votre climatiseur, comprenant inspection, nettoyage et vérification",
+    subscriptionNewService: "Nouveau Service!",
+    subscriptionTagline: "Gardez votre climatiseur en parfait état tout au long de l'année avec notre programme d'entretien annuel à prix fixe",
+    perYear: "par an",
+    annualSubscription: "Abonnement Annuel",
+    annualMaintenance: "Entretien annuel",
     // Features
     whyChoose: "Pourquoi Choisir ZakOr?",
     whyDesc: "Moi, Zakri Eli Barda, je me spécialise dans l'installation, la réparation et le nettoyage des climatiseurs, avec un accent sur un service professionnel et fiable",
