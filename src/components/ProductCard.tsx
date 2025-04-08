@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Phone, MessageCircle, Mail, Snowflake, CalendarCheck, Clock, BadgeCheck } from 'lucide-react';
+import { Phone, MessageCircle, Mail, Snowflake, CalendarCheck, Clock, BadgeCheck, CreditCard } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { toast } from 'sonner';
+import PaymentModal from './PaymentModal';
 
 interface ProductCardProps {
   title: string;
@@ -18,6 +19,7 @@ interface ProductCardProps {
 const ProductCard = ({ title, description, price, imageUrl, features, isSubscription = false }: ProductCardProps) => {
   const { language } = useLanguage();
   const isRTL = language === 'he';
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   
   const openWhatsApp = () => {
     const messageText = language === 'he' 
@@ -40,6 +42,15 @@ const ProductCard = ({ title, description, price, imageUrl, features, isSubscrip
       
     window.open(`mailto:zakarie688@gmail.com?subject=${encodeURIComponent(subject)}`, '_blank');
     toast.success(language === 'he' ? 'פותח את תוכנת המייל' : "Ouverture de l'application de messagerie");
+  };
+  
+  const handlePaymentSuccess = () => {
+    toast.success(
+      language === 'he'
+        ? `הרכישה של ${title} הושלמה בהצלחה!`
+        : `L'achat de ${title} a été complété avec succès!`,
+      { duration: 5000 }
+    );
   };
   
   return (
@@ -131,13 +142,23 @@ const ProductCard = ({ title, description, price, imageUrl, features, isSubscrip
       
       {/* Card actions with improved visual effects */}
       <CardFooter className="flex flex-col gap-2 bg-gradient-to-b from-coolblue-50/50 to-white p-4 border-t border-coolblue-100/30">
-        <Button 
-          className={`w-full ${isSubscription ? 'bg-amber-500 hover:bg-amber-400' : 'bg-coolblue-600 hover:bg-coolblue-500'} shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2`}
-          onClick={openWhatsApp}
-        >
-          <MessageCircle className={isRTL ? "ml-1 animate-pulse" : "mr-1 animate-pulse"} size={16} />
-          <span>{language === 'he' ? 'שלח הודעת WhatsApp' : 'Envoyer un Message WhatsApp'}</span>
-        </Button>
+        {isSubscription ? (
+          <Button 
+            className="w-full bg-green-600 hover:bg-green-500 shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+            onClick={() => setIsPaymentModalOpen(true)}
+          >
+            <CreditCard className={isRTL ? "ml-1" : "mr-1"} size={16} />
+            <span>{language === 'he' ? 'שלם עכשיו' : 'Payer maintenant'}</span>
+          </Button>
+        ) : (
+          <Button 
+            className={`w-full ${isSubscription ? 'bg-amber-500 hover:bg-amber-400' : 'bg-coolblue-600 hover:bg-coolblue-500'} shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2`}
+            onClick={openWhatsApp}
+          >
+            <MessageCircle className={isRTL ? "ml-1 animate-pulse" : "mr-1 animate-pulse"} size={16} />
+            <span>{language === 'he' ? 'שלח הודעת WhatsApp' : 'Envoyer un Message WhatsApp'}</span>
+          </Button>
+        )}
         
         <div className="flex gap-2 w-full">
           <Button variant="outline" 
@@ -155,6 +176,15 @@ const ProductCard = ({ title, description, price, imageUrl, features, isSubscrip
           </Button>
         </div>
       </CardFooter>
+      
+      {/* Payment Modal */}
+      <PaymentModal 
+        isOpen={isPaymentModalOpen}
+        onClose={() => setIsPaymentModalOpen(false)}
+        title={title}
+        price={price}
+        onPaymentSuccess={handlePaymentSuccess}
+      />
     </Card>
   );
 };
